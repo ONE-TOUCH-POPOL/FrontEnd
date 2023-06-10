@@ -1,7 +1,8 @@
 /* eslint-disable */
 import React from "react";
+import Register from "./register";
 
-const Register = () => {
+const RegisterPage = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -16,15 +17,7 @@ const Register = () => {
     alert("이메일 제대로 써라!");
   };
 
-  return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input type="text" name="email" />
-        <input type="password" name="password" />
-        <button type="submit">회원 가입</button>
-      </form>
-    </div>
-  );
+  return <Register onSubmit={onSubmit}></Register>;
 };
 
-export default Register;
+export default RegisterPage;
