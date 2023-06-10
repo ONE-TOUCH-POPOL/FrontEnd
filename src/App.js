@@ -2,8 +2,8 @@
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/common/NavBar";
 import Home from "./pages/home";
-import "./App.css";
 import Register from "./pages/register";
+import "./App.css";
 
 function App() {
   return (

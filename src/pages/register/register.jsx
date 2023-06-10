@@ -1,15 +1,16 @@
 import React from "react";
 
-const register = ({ onSubmit }) => {
+const Register = ({ onSubmit }) => {
   return (
-    <div>
+    <>
       <form onSubmit={onSubmit}>
         <input type="text" name="email" />
         <input type="password" name="password" />
+        <input type="password" name="confirmPassword" />
         <button type="submit">회원 가입</button>
       </form>
-    </div>
+    </>
   );
 };
 
-export default register;
+export default Register;
