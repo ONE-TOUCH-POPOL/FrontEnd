@@ -1,30 +1,24 @@
 import styled from "styled-components";
-const Wrapper = styled.form`
-  & + & {
-    margin-top: 1rem;
-  }
-`;
 
-const Label = styled.span`
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
+const Form = styled.div`
+  margin: 100px auto;
+  width: 420px;
+  padding: 50px;
+  border: 2px solid #e7e7e7;
+  border-radius: 5px;
 `;
 
 const Input = styled.input`
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  border: 1px solid;
-  outline: none;
-  border-radius: 0px;
-  line-height: 2.5rem;
-  font-size: 1.2rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  height: 45px;
+  border-radius: 5px;
+  margin: 0 0 8px;
+  padding: 5px 39px 5px 11px;
+  border: solid 1px #dadada;
+  background: #fff;
+  box-sizing: border-box;
 `;
 
-const RegisterLayout = ({ label, ...props }) => (
-  <Wrapper>
-    <Label>{label}</Label>
-    <Input {...props} />
-  </Wrapper>
-);
-export default RegisterLayout;
+export { Input, Form };
