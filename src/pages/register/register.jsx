@@ -1,5 +1,6 @@
 import React from "react";
-import { Input, Form } from "./Register.layout";
+import { Form } from "./Register.layout";
+import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 
 const Register = ({ onSubmit }) => {
