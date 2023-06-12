@@ -5,6 +5,8 @@ import Register from "./Register";
 const RegisterPage = () => {
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log("click");
+
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword.value;
