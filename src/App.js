@@ -12,8 +12,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/join" element={<Register />} />
+        <Route path="/signup" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Home />} />
       </Routes>
     </div>
   );
