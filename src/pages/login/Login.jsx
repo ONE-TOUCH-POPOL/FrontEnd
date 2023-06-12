@@ -6,7 +6,7 @@ import Button from "../../components/button/Button";
 const Login = ({ onSubmit }) => {
   return (
     <>
-      <Form onSumit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         <h2>로그인</h2>
         <br />
 
