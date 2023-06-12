@@ -1,12 +1,9 @@
 /* eslint-disable */
 import React from "react";
+import Calendar from "./Calendar";
 
 const CalendarComponent = ({ children, click, ...props }) => {
-  return (
-    <Button click={click} {...props}>
-      {children}
-    </Button>
-  );
+  return <Calendar></Calendar>;
 };
 
 export default CalendarComponent;
