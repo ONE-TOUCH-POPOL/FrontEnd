@@ -2,13 +2,13 @@
 import React from "react";
 import Register from "./Register";
 import axios from "axios";
-import { useState } from "react";
-
-// modal
-import { Modal } from "../../components/modal/Modal.jsx";
-
+import useStore from "../../store/modal";
 const RegisterPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const modal = useStore();
+  const openSuccessModal = () => {
+    modal.set_modal();
+    modal.set_modal_text("회원가입 성공!! ");
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const RegisterPage = () => {
     if (!isValidPassword) alert("패스워드 제대로 써라! ");
     if (!isPasswordConfirm) alert("다른 패스워드 입력됨");
     if (isValidEmail && isValidPassword && isPasswordConfirm) {
-      alert("제대로 했습니다");
+      // alert("제대로 했습니다");
 
       axios
         .post("http://221.164.64.185:8080/api/v1/signup", {
@@ -41,7 +41,7 @@ const RegisterPage = () => {
         })
         .then((resp) => {
           console.log(resp.data);
-          setIsOpen(!isOpen);
+          if (resp.data.success) openSuccessModal();
         });
     }
   };
@@ -49,7 +49,6 @@ const RegisterPage = () => {
   return (
     <div>
       <Register onSubmit={onSubmit}></Register>
-      {isOpen === false ? null : <Modal></Modal>}
     </div>
   );
 };
