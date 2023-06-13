@@ -8,7 +8,8 @@ const StyledNav = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  background: #92a8d1;
+  background: #abc8ff;
+  /* background: #92a8d1; */
   text-align: right;
   padding: 8px 0px;
 `;
