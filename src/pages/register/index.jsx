@@ -2,8 +2,14 @@
 import React from "react";
 import Register from "./Register";
 import axios from "axios";
+import { useState } from "react";
+
+// modal
+import { Modal } from "../../components/modal/Modal.jsx";
 
 const RegisterPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("click");
@@ -35,11 +41,17 @@ const RegisterPage = () => {
         })
         .then((resp) => {
           console.log(resp.data);
+          setIsOpen(!isOpen);
         });
     }
   };
 
-  return <Register onSubmit={onSubmit}></Register>;
+  return (
+    <div>
+      <Register onSubmit={onSubmit}></Register>
+      {isOpen === false ? null : <Modal></Modal>}
+    </div>
+  );
 };
 
 export default RegisterPage;
