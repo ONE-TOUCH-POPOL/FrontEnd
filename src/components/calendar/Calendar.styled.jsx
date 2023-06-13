@@ -4,7 +4,8 @@ const StyledCalendar = styled.button``;
 
 const CalendarStyle = styled.div.attrs((props) => ({}))`
   ${(props) => {
-    const gray = "gray";
+    const lightblue = "#c8e4ff";
+    // const red = "#ff4d7c";
     const black = "black";
     return css`
       display: flex;
@@ -20,16 +21,16 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
         justify-content: center;
         height: 5%;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         .calendar_button {
           cursor: pointer;
           margin: 5px;
           margin-right: 10px;
           margin-left: 10px;
           color: ${black};
-          background: ${gray};
+          background: ${lightblue};
           padding: 0.375rem 0.75rem;
-          border: 1px solid ${gray};
+          border: 1px solid ${lightblue};
           border-radius: 5px;
         }
         .calendar_head_text {
@@ -50,8 +51,8 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
           width: 100%;
           height: 100%;
           .calendar_body_head {
-            border-top: 3px solid ${gray};
-            border-bottom: 3px solid ${gray};
+            border-top: 3px solid ${lightblue};
+            border-bottom: 3px solid ${lightblue};
 
             display: flex;
             .calendar_body_head_days {
@@ -76,7 +77,7 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
 `;
 const Days_style = styled.div.attrs((props) => ({}))`
   ${(props) => {
-    const bgColor = props.bgColor ? "red" : "gray";
+    const bgColor = props.colors.bgcolor ? "#ff4d7c" : "lightblue";
     let days_color = "white";
     return css`
       background-color: ${days_color};
