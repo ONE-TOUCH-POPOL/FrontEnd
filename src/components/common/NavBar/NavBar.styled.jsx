@@ -11,7 +11,7 @@ const StyledNav = styled.div`
   background: #abc8ff;
   /* background: #92a8d1; */
   text-align: right;
-  padding: 8px 0px;
+  padding: 18px 0px;
 `;
 
 const StyledNavLink = styled(Link)`
