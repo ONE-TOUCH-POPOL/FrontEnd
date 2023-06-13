@@ -5,10 +5,12 @@ import Home from "./pages/home";
 import Register from "./pages/register";
 import Login from "./pages/login";
 import "./App.css";
+import Modal from "./components/modal";
 
 function App() {
   return (
     <div className="App">
+      <Modal></Modal>
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
