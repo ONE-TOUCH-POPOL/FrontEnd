@@ -17,15 +17,7 @@ const ModalComponent = ({ ...props }) => {
     }
   };
 
-  return (
-    <Modal
-      showModal={modal.modal}
-      modal={modal}
-      modalRef={modalRef}
-      modal_close={modal_close}
-      {...props}
-    ></Modal>
-  );
+  return <Modal showModal={modal.modal} modal={modal} modalRef={modalRef} modal_close={modal_close} {...props}></Modal>;
 };
 
 export default ModalComponent;

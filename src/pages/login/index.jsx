@@ -2,8 +2,19 @@
 import React from "react";
 import Login from "./Login";
 import axios from "axios";
+import useStore from "../../store/modal";
 
 const LoginPage = () => {
+  const modal = useStore();
+  const openSuccessModal = () => {
+    modal.set_modal();
+    modal.set_modal_text("로그인 성공!! ");
+  };
+  const openFailModal = () => {
+    modal.set_modal();
+    modal.set_modal_text("이메일/비밀번호 다시 확인해주세요 ");
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("click");
@@ -18,8 +29,9 @@ const LoginPage = () => {
       })
       .then((resp) => {
         console.log(resp.data);
-
-        // status error code 별로
+        if (resp.data.success) openSuccessModal();
+        // status error code 별로 수정할 것
+        else openFailModal();
       });
 
     // return;
