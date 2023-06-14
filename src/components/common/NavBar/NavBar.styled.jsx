@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledLogo = styled.img`
-  height: 24px;
+  height: 34px;
+  border-radius: 153px;
 `;
 const StyledNav = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const StyledNav = styled.div`
   background: #abc8ff;
   /* background: #92a8d1; */
   text-align: right;
-  padding: 18px 0px;
+  padding: 10px 0px;
 `;
 
 const StyledNavLink = styled(Link)`
@@ -22,6 +23,8 @@ const StyledNavLink = styled(Link)`
 
 const NavLinks = styled.div`
   a {
+    display: inline-block;
+    margin-top: 8px;
     color: #fff;
     margin-left: 1em;
     text-decoration: none;
