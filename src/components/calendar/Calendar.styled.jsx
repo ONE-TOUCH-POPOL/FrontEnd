@@ -4,16 +4,13 @@ const StyledCalendar = styled.button``;
 
 const CalendarStyle = styled.div.attrs((props) => ({}))`
   ${(props) => {
-    const lightblue = "#c8e4ff";
-    // const red = "#ff4d7c";
-    const black = "black";
     return css`
       display: flex;
       justify-content: center;
       .calendar {
         padding-top: 10px;
-        height: 50vh;
-        width: 100%;
+        /* height: 56vh; */
+        width: 56vh;
         font-size: 1.5vh;
       }
       .calendar_head {
@@ -25,19 +22,13 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
         .calendar_button {
           cursor: pointer;
           margin: 5px;
-          margin-right: 10px;
-          margin-left: 10px;
-          color: ${black};
-          background: ${lightblue};
-          padding: 0.375rem 0.75rem;
-          border: 1px solid ${lightblue};
-          border-radius: 5px;
+          background: white;
         }
         .calendar_head_text {
-          width: 18%;
           display: flex;
           justify-content: center;
           font-size: 2vw;
+          margin: 0 20%;
         }
       }
 
@@ -51,15 +42,18 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
           width: 100%;
           height: 100%;
           .calendar_body_head {
-            border-top: 3px solid ${lightblue};
-            border-bottom: 3px solid ${lightblue};
-
             display: flex;
             .calendar_body_head_days {
               display: flex;
               justify-content: center;
               width: 100%;
-              font-size: 2vw;
+              font-size: 1.5vw;
+
+              .calendar_body_head_day {
+                border: 2px solid #abc8ff;
+                border-radius: 10px;
+                padding: 5px 10px;
+              }
             }
           }
 
@@ -77,22 +71,33 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
 `;
 const Days_style = styled.div.attrs((props) => ({}))`
   ${(props) => {
-    const bgColor = props.colors.bgcolor ? "#ff4d7c" : "lightblue";
+    // const bgColor = props.colors.bgcolor ? "#ff4d7c" : "white";
     let days_color = "white";
     return css`
       background-color: ${days_color};
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      /* border: 2px solid ${bgColor};
-      border-radius: 5px; */
       margin: 5px;
       width: 100%;
       height: 100%;
-      text-align: initial;
-      font-size: 2vw;
+      /* text-align: initial; */
+      font-size: 1.5vw;
       padding: 1px;
     `;
   }};
 `;
-export { StyledCalendar, Days_style, CalendarStyle };
+
+const Day_style = styled.span.attrs((props) => ({}))`
+  ${(props) => {
+    const bgColor = props.colors.bgcolor ? "#FFCCEF" : "white";
+    // console.log(bgColor);
+    return css`
+      background-color: ${bgColor};
+      border: 1.5px solid ${bgColor};
+      border-radius: 50%;
+    `;
+  }};
+`;
+
+export { StyledCalendar, Days_style, CalendarStyle, Day_style };

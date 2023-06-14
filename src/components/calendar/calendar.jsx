@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState } from "react";
-import { CalendarStyle, StyledCalendar, Days_style } from "./Calendar.styled";
+import { CalendarStyle, StyledCalendar, Days_style, Day_style } from "./Calendar.styled";
 import moment from "moment";
 
 const Day_kor = () => {
@@ -8,14 +8,40 @@ const Day_kor = () => {
     <>
       <div className="calendar_body_head">
         <div style={{ color: "red" }} className="calendar_body_head_days">
-          일
+          <div />
+          <div className="calendar_body_head_day">일</div>
+          <div />
         </div>
-        <div className="calendar_body_head_days">월</div>
-        <div className="calendar_body_head_days">화</div>
-        <div className="calendar_body_head_days">수</div>
-        <div className="calendar_body_head_days">목</div>
-        <div className="calendar_body_head_days">금</div>
-        <div className="calendar_body_head_days">토</div>
+        <div className="calendar_body_head_days">
+          <div />
+          <div className="calendar_body_head_day">월</div>
+          <div />
+        </div>
+        <div className="calendar_body_head_days">
+          <div />
+          <div className="calendar_body_head_day">화</div>
+          <div />
+        </div>
+        <div className="calendar_body_head_days">
+          <div />
+          <div className="calendar_body_head_day">수</div>
+          <div />
+        </div>
+        <div className="calendar_body_head_days">
+          <div />
+          <div className="calendar_body_head_day">목</div>
+          <div />
+        </div>
+        <div className="calendar_body_head_days">
+          <div />
+          <div className="calendar_body_head_day">금</div>
+          <div />
+        </div>
+        <div className="calendar_body_head_days">
+          <div />
+          <div className="calendar_body_head_day">토</div>
+          <div />
+        </div>
       </div>
     </>
   );
@@ -55,7 +81,16 @@ const CalendarComp = ({ time }) => {
 
             return (
               <Days_style colors={colors} key={index}>
-                <span style={{ color: colors.color }}>{days.format("D")}</span>
+                <Day_style colors={colors} key={index}>
+                  {days.format("D")}
+                </Day_style>
+                {/* <span
+                  style={{
+                    color: colors.color,
+                  }}
+                >
+                  {days.format("D")}
+                </span> */}
               </Days_style>
             );
           })}
@@ -70,6 +105,7 @@ const Calendar = ({ ...props }) => {
   return (
     <CalendarStyle {...props}>
       <div className="calendar">
+        {/* calendar head : < 년 월 > start  */}
         <div className="calendar_head">
           <button
             className="calendar_button"
@@ -77,24 +113,29 @@ const Calendar = ({ ...props }) => {
               setMoment((prev) => prev.clone().subtract(1, "month"));
             }}
           >
-            이전달
+            <img src="/img/arrow_left.png" style={{ height: "2vw", weight: "2vw" }} />
           </button>
-          <div className="calendar_head_text">{today.format("YYYY 년 MM 월")}</div>
+          <div className="calendar_head_text">{today.format("YYYY - MM ")}</div>
+
           <button
             className="calendar_button"
             onClick={() => {
               setMoment((prev) => prev.clone().add(1, "month"));
             }}
           >
-            다음달
+            <img src="/img/arrow_right.png" style={{ height: "2vw", weight: "2vw" }} />
           </button>
         </div>
+        {/* calendar head : < 년 월 > end  */}
+
+        {/* calendar body start  */}
         <div className="calendar_body">
           <div className="calendar_body_box">
             <Day_kor />
             <CalendarComp time={today} />
           </div>
         </div>
+        {/* calendar body end  */}
       </div>
     </CalendarStyle>
   );
