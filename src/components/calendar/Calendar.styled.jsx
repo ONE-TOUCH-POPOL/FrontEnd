@@ -28,7 +28,7 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
           display: flex;
           justify-content: center;
           font-size: 2vw;
-          margin: 0 20%;
+          margin: 0 10%;
         }
       }
 
@@ -71,19 +71,18 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
 `;
 const Days_style = styled.div.attrs((props) => ({}))`
   ${(props) => {
-    // const bgColor = props.colors.bgcolor ? "#ff4d7c" : "white";
     let days_color = "white";
     return css`
       background-color: ${days_color};
       cursor: pointer;
       display: flex;
+      justify-content: center;
       flex-direction: column;
-      margin: 5px;
+      margin: 2px;
       width: 100%;
       height: 100%;
-      /* text-align: initial; */
       font-size: 1.5vw;
-      padding: 1px;
+      padding: 5px 10px;
     `;
   }};
 `;
@@ -91,11 +90,15 @@ const Days_style = styled.div.attrs((props) => ({}))`
 const Day_style = styled.span.attrs((props) => ({}))`
   ${(props) => {
     const bgColor = props.colors.bgcolor ? "#FFCCEF" : "white";
+    const textColor = props.colors.color;
     // console.log(bgColor);
     return css`
       background-color: ${bgColor};
       border: 1.5px solid ${bgColor};
+      color: ${textColor};
       border-radius: 50%;
+      width: 100%;
+      padding: 4%;
     `;
   }};
 `;

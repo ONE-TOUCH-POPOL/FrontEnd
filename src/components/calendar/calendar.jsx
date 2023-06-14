@@ -8,39 +8,25 @@ const Day_kor = () => {
     <>
       <div className="calendar_body_head">
         <div style={{ color: "red" }} className="calendar_body_head_days">
-          <div />
           <div className="calendar_body_head_day">일</div>
-          <div />
         </div>
         <div className="calendar_body_head_days">
-          <div />
           <div className="calendar_body_head_day">월</div>
-          <div />
         </div>
         <div className="calendar_body_head_days">
-          <div />
           <div className="calendar_body_head_day">화</div>
-          <div />
         </div>
         <div className="calendar_body_head_days">
-          <div />
           <div className="calendar_body_head_day">수</div>
-          <div />
         </div>
         <div className="calendar_body_head_days">
-          <div />
           <div className="calendar_body_head_day">목</div>
-          <div />
         </div>
         <div className="calendar_body_head_days">
-          <div />
           <div className="calendar_body_head_day">금</div>
-          <div />
         </div>
         <div className="calendar_body_head_days">
-          <div />
           <div className="calendar_body_head_day">토</div>
-          <div />
         </div>
       </div>
     </>
@@ -74,9 +60,9 @@ const CalendarComp = ({ time }) => {
             // 조건에 다라 해당날짜 css를 변경
             if (time.format("YYYYMMDD") === days.format("YYYYMMDD")) {
               colors.bgcolor = true;
-              colors.color = "red";
+              // colors.color = "red";
             } else if (days.format("MM") !== today.format("MM")) {
-              colors.color = "gray";
+              colors.color = "#b7b7b7";
             }
 
             return (
@@ -84,13 +70,6 @@ const CalendarComp = ({ time }) => {
                 <Day_style colors={colors} key={index}>
                   {days.format("D")}
                 </Day_style>
-                {/* <span
-                  style={{
-                    color: colors.color,
-                  }}
-                >
-                  {days.format("D")}
-                </span> */}
               </Days_style>
             );
           })}
@@ -113,7 +92,7 @@ const Calendar = ({ ...props }) => {
               setMoment((prev) => prev.clone().subtract(1, "month"));
             }}
           >
-            <img src="/img/arrow_left.png" style={{ height: "2vw", weight: "2vw" }} />
+            <img src="/img/arrow_left.png" style={{ height: "6vw", paddingTop: "1vw" }} />
           </button>
           <div className="calendar_head_text">{today.format("YYYY - MM ")}</div>
 
@@ -123,7 +102,7 @@ const Calendar = ({ ...props }) => {
               setMoment((prev) => prev.clone().add(1, "month"));
             }}
           >
-            <img src="/img/arrow_right.png" style={{ height: "2vw", weight: "2vw" }} />
+            <img src="/img/arrow_right.png" style={{ height: "6vw", paddingTop: "1vw" }} />
           </button>
         </div>
         {/* calendar head : < 년 월 > end  */}
