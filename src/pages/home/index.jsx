@@ -1,8 +1,9 @@
 /* eslint-disable */
 import React from "react";
-import { HomLayout } from "./Home.layout";
-import BigCalendarComponent from "../../components/bigCalendar";
-import CalendarComponent from "../../components/calendar";
+// import { HomLayout } from "./Home.layout";
+// import BigCalendarComponent from "../../components/bigCalendar";
+// import CalendarComponent from "../../components/calendar";
+import Sidebar from "../../components/sidebar/Sidebar";
 const Home = () => {
   return (
     // big calendar test
@@ -11,9 +12,12 @@ const Home = () => {
     // </HomLayout>
 
     // small calendar test
-    <HomLayout>
-      <CalendarComponent></CalendarComponent>
-    </HomLayout>
+    // <HomLayout>
+    //   <CalendarComponent></CalendarComponent>
+    // </HomLayout>
+
+    // sidebar test
+    <Sidebar></Sidebar>
   );
 };
 
