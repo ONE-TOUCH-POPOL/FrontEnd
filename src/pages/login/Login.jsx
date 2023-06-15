@@ -1,13 +1,21 @@
 import React from "react";
+import { Form } from "./Login.layout";
+import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
-import { Input, Form } from "./Login.layout";
 
-const Login = () => {
+const Login = ({ onSubmit }) => {
   return (
     <>
-      <div>
-        <h2> Login</h2>
-      </div>
+      <Form onSubmit={onSubmit}>
+        <h2>로그인</h2>
+        <br />
+
+        <Input type="text" name="email" placeholder="이메일" />
+        <Input type="password" name="password" placeholder="비밀번호" />
+        <div style={{ width: "100%", marginTop: "10px" }}>
+          <Button type="submit">로그인</Button>
+        </div>
+      </Form>
     </>
   );
 };

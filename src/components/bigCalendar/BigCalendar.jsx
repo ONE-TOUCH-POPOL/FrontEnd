@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState } from "react";
-import { CalendarStyle, StyledCalendar, Days_style, Day_style } from "./Calendar.styled";
+import { CalendarStyle, StyledCalendar, Days_style } from "./BigCalendar.styled";
 import moment from "moment";
 
 const Day_kor = () => {
@@ -8,32 +8,20 @@ const Day_kor = () => {
     <>
       <div className="calendar_body_head">
         <div style={{ color: "red" }} className="calendar_body_head_days">
-          <div className="calendar_body_head_day">일</div>
+          일
         </div>
-        <div className="calendar_body_head_days">
-          <div className="calendar_body_head_day">월</div>
-        </div>
-        <div className="calendar_body_head_days">
-          <div className="calendar_body_head_day">화</div>
-        </div>
-        <div className="calendar_body_head_days">
-          <div className="calendar_body_head_day">수</div>
-        </div>
-        <div className="calendar_body_head_days">
-          <div className="calendar_body_head_day">목</div>
-        </div>
-        <div className="calendar_body_head_days">
-          <div className="calendar_body_head_day">금</div>
-        </div>
-        <div className="calendar_body_head_days">
-          <div className="calendar_body_head_day">토</div>
-        </div>
+        <div className="calendar_body_head_days">월</div>
+        <div className="calendar_body_head_days">화</div>
+        <div className="calendar_body_head_days">수</div>
+        <div className="calendar_body_head_days">목</div>
+        <div className="calendar_body_head_days">금</div>
+        <div className="calendar_body_head_days">토</div>
       </div>
     </>
   );
 };
 
-const CalendarComp = ({ time }) => {
+const BigCalendarComp = ({ time }) => {
   // 날짜 변수 선언
   const today = time;
   time = moment();
@@ -60,16 +48,14 @@ const CalendarComp = ({ time }) => {
             // 조건에 다라 해당날짜 css를 변경
             if (time.format("YYYYMMDD") === days.format("YYYYMMDD")) {
               colors.bgcolor = true;
-              // colors.color = "red";
+              colors.color = "red";
             } else if (days.format("MM") !== today.format("MM")) {
-              colors.color = "#b7b7b7";
+              colors.color = "gray";
             }
 
             return (
               <Days_style colors={colors} key={index}>
-                <Day_style colors={colors} key={index}>
-                  {days.format("D")}
-                </Day_style>
+                <span style={{ color: colors.color }}>{days.format("D")}</span>
               </Days_style>
             );
           })}
@@ -79,12 +65,11 @@ const CalendarComp = ({ time }) => {
   return <>{Result}</>;
 };
 
-const Calendar = ({ ...props }) => {
+const BigCalendar = ({ ...props }) => {
   const [today, setMoment] = useState(moment());
   return (
     <CalendarStyle {...props}>
       <div className="calendar">
-        {/* calendar head : < 년 월 > start  */}
         <div className="calendar_head">
           <button
             className="calendar_button"
@@ -92,32 +77,27 @@ const Calendar = ({ ...props }) => {
               setMoment((prev) => prev.clone().subtract(1, "month"));
             }}
           >
-            <img src="/img/arrow_left.png" style={{ height: "5vh", paddingTop: "1vw" }} />
+            이전달
           </button>
-          <div className="calendar_head_text">{today.format("YYYY - MM ")}</div>
-
+          <div className="calendar_head_text">{today.format("YYYY 년 MM 월")}</div>
           <button
             className="calendar_button"
             onClick={() => {
               setMoment((prev) => prev.clone().add(1, "month"));
             }}
           >
-            <img src="/img/arrow_right.png" style={{ height: "5vh", paddingTop: "1vw" }} />
+            다음달
           </button>
         </div>
-        {/* calendar head : < 년 월 > end  */}
-
-        {/* calendar body start  */}
         <div className="calendar_body">
           <div className="calendar_body_box">
             <Day_kor />
-            <CalendarComp time={today} />
+            <BigCalendarComp time={today} />
           </div>
         </div>
-        {/* calendar body end  */}
       </div>
     </CalendarStyle>
   );
 };
 
-export default Calendar;
+export default BigCalendar;

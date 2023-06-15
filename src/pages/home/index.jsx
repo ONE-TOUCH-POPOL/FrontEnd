@@ -1,12 +1,23 @@
+/* eslint-disable */
 import React from "react";
-import { HomLayout } from "./Home.layout";
-import Button from "../../components/button/Button";
-import CalendarComponent from "../../components/calendar";
+// import { HomLayout } from "./Home.layout";
+// import BigCalendarComponent from "../../components/bigCalendar";
+// import CalendarComponent from "../../components/calendar";
+import Sidebar from "../../components/sidebar/Sidebar";
 const Home = () => {
   return (
-    <HomLayout>
-      <CalendarComponent></CalendarComponent>
-    </HomLayout>
+    // big calendar test
+    // <HomLayout>
+    //   <BigCalendarComponent></BigCalendarComponent>
+    // </HomLayout>
+
+    // small calendar test
+    // <HomLayout>
+    //   <CalendarComponent></CalendarComponent>
+    // </HomLayout>
+
+    // sidebar test
+    <Sidebar></Sidebar>
   );
 };
 
