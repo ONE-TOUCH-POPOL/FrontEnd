@@ -7,28 +7,36 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
     return css`
       display: flex;
       justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
       .calendar {
         padding-top: 10px;
-        /* height: 56vh; */
-        width: 56vh;
+        /* width: 56vh; */
+        width: 90%;
+        height: 90%;
+        aspect-ratio: 1/1;
+
         font-size: 1.5vh;
       }
       .calendar_head {
         display: flex;
-        justify-content: center;
-        height: 5%;
+        /* justify-content: center; */
+        justify-content: space-between;
+
+        height: 10%; // 5
         align-items: center;
         margin-bottom: 20px;
         .calendar_button {
           cursor: pointer;
-          margin: 5px;
+          /* margin: 1px; */
           background: white;
         }
         .calendar_head_text {
           display: flex;
-          justify-content: center;
-          font-size: 2vw;
-          margin: 0 10%;
+          /* justify-content: center; */
+          font-size: 1vh;
+          /* margin: 0 10%; */
         }
       }
 
@@ -36,23 +44,24 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
         display: flex;
         width: 100%;
         height: 90%;
+
         .calendar_body_box {
           display: flex;
           flex-direction: column;
-          width: 100%;
           height: 100%;
+          width: 100%;
           .calendar_body_head {
             display: flex;
             .calendar_body_head_days {
               display: flex;
               justify-content: center;
               width: 100%;
-              font-size: 1.5vw;
-
+              font-size: 1vw;
+              margin-bottom: 10px;
               .calendar_body_head_day {
-                border: 2px solid #abc8ff;
+                border: 1.4px solid #abc8ff;
                 border-radius: 10px;
-                padding: 5px 10px;
+                padding: 5px;
               }
             }
           }
@@ -62,7 +71,7 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
             flex-direction: row;
             width: 100%;
             height: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 22px;
           }
         }
       }
@@ -81,8 +90,9 @@ const Days_style = styled.div.attrs((props) => ({}))`
       margin: 2px;
       width: 100%;
       height: 100%;
-      font-size: 1.5vw;
-      padding: 5px 10px;
+      font-size: 1vw;
+
+      /* padding: 5px 10px; */
     `;
   }};
 `;

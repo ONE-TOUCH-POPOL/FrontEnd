@@ -92,7 +92,7 @@ const Calendar = ({ ...props }) => {
               setMoment((prev) => prev.clone().subtract(1, "month"));
             }}
           >
-            <img src="/img/arrow_left.png" style={{ height: "6vw", paddingTop: "1vw" }} />
+            <img src="/img/arrow_left.png" style={{ height: "5vh", paddingTop: "1vw" }} />
           </button>
           <div className="calendar_head_text">{today.format("YYYY - MM ")}</div>
 
@@ -102,7 +102,7 @@ const Calendar = ({ ...props }) => {
               setMoment((prev) => prev.clone().add(1, "month"));
             }}
           >
-            <img src="/img/arrow_right.png" style={{ height: "6vw", paddingTop: "1vw" }} />
+            <img src="/img/arrow_right.png" style={{ height: "5vh", paddingTop: "1vw" }} />
           </button>
         </div>
         {/* calendar head : < 년 월 > end  */}
