@@ -7,16 +7,18 @@ const RegisterPage = () => {
   const modal = useStore();
   const openSuccessModal = () => {
     modal.set_modal();
+    modal.set_modal_size("26%", "26%");
     modal.set_modal_text("회원가입 성공!! ");
   };
 
   const openNoDupEmailModal = () => {
     modal.set_modal();
-    modal.set_modal_size("40%", "60%");
+    modal.set_modal_size("26%", "30%");
     modal.set_modal_text("중복된 이메일이 존재하지 않음 써도됨 ㅇㅇ");
   };
   const openDupEmailModal = () => {
     modal.set_modal();
+    modal.set_modal_size("26%", "30%");
     modal.set_modal_text("중복된 이메일이 존재합니다.");
   };
 

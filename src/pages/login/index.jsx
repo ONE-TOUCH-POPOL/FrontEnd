@@ -8,10 +8,12 @@ const LoginPage = () => {
   const modal = useStore();
   const openSuccessModal = () => {
     modal.set_modal();
+    modal.set_modal_size("26%", "26%");
     modal.set_modal_text("로그인 성공!! ");
   };
   const openFailModal = () => {
     modal.set_modal();
+    modal.set_modal_size("26%", "30%");
     modal.set_modal_text("이메일/비밀번호 다시 확인해주세요 ");
   };
 
