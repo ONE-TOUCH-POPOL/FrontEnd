@@ -10,6 +10,30 @@ const RegisterPage = () => {
     modal.set_modal_text("회원가입 성공!! ");
   };
 
+  const openNoDupEmailModal = () => {
+    modal.set_modal();
+    modal.set_modal_size("40%", "60%");
+    modal.set_modal_text("중복된 이메일이 존재하지 않음 써도됨 ㅇㅇ");
+  };
+  const openDupEmailModal = () => {
+    modal.set_modal();
+    modal.set_modal_text("중복된 이메일이 존재합니다.");
+  };
+
+  const checkDupEmail = (email) => {
+    // e.preventDefault();
+    console.log("button click");
+    console.log(email);
+    axios
+      .post("http://221.164.64.185:8080/api/v1/signup/checkDuplicateEmail", {
+        email: email,
+      })
+      .then((resp) => {
+        console.log(resp.data);
+        if (resp.data.success) openNoDupEmailModal();
+        else openDupEmailModal();
+      });
+  };
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("click");
@@ -48,7 +72,7 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <Register onSubmit={onSubmit}></Register>
+      <Register checkDupEmail={checkDupEmail} onSubmit={onSubmit}></Register>
     </div>
   );
 };
