@@ -61,6 +61,10 @@ const ModalStyle = styled.div.attrs((props) => ({}))`
           width: 50%;
           height: 40px;
         }
+
+        // height, width  적용 크기
+        height: ${(props) => props.height};
+        width: ${(props) => props.width};
       }
     `;
   }};
