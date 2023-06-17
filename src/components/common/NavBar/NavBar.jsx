@@ -18,7 +18,7 @@ const NavBar = () => {
           <StyledLogo src="/img/logo.jpeg" alt="Logo"></StyledLogo>
         </StyledNavLink>
         <NavLinks>
-          <StyledNavLink to="/">Home</StyledNavLink>
+          <StyledNavLink to="/record">Record</StyledNavLink>
           {isLogin ? <StyledNavLink to="/logout">로그아웃</StyledNavLink> : <StyledNavLink to="/login">로그인</StyledNavLink>}
           <StyledNavLink to="/signup">회원가입</StyledNavLink>
         </NavLinks>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const SidebarLayout = styled.div`
+const OpenSidebarLayout = styled.div`
   position: fixed;
   width: 200px;
   height: 100%;
@@ -15,13 +15,13 @@ const SidebarLayout = styled.div`
   gap: 20px;
 `;
 
-const SidebarCategoryLayout = styled.div`
+const OpenSidebarCategoryLayout = styled.div`
   flex: 1;
   display: flex;
   border-bottom: 1px solid #abc8ff;
 `;
 
-const SidebarCalendarLayout = styled.div`
+const OpenSidebarCalendarLayout = styled.div`
   display: flex;
   width: 100%;
   height: 0;
@@ -31,11 +31,4 @@ const SidebarCalendarLayout = styled.div`
   /* margin-bottom: 12px; */
 `;
 
-// const ContentLayout = styled.div`
-//   width: 80%;
-//   height: 100%;
-//   background-color: blue;
-//   float: left;
-// `;
-
-export { SidebarLayout, SidebarCalendarLayout, SidebarCategoryLayout };
+export { OpenSidebarLayout, OpenSidebarCalendarLayout, OpenSidebarCategoryLayout };
