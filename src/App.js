@@ -6,6 +6,7 @@ import Register from "./pages/register";
 import Login from "./pages/login";
 import "./App.css";
 import Modal from "./components/modal";
+import StudyRecord from "./pages/studyRecord/StudyRecord";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Home />} />
+        <Route path="/record" element={<StudyRecord />} />
       </Routes>
     </div>
   );
