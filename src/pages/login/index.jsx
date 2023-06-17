@@ -1,11 +1,15 @@
 /* eslint-disable */
-import React from "react";
+import React, { useState } from "react";
 import Login from "./Login";
-import axios from "axios";
+// import axios from "axios";
+import api from "../../api/api.js";
 import useStore from "../../store/modal";
+import useAuthStore from "../../store/useAuth";
 
 const LoginPage = () => {
   const modal = useStore();
+  const auth = useAuthStore();
+
   const openSuccessModal = () => {
     modal.set_modal();
     modal.set_modal_size("26%", "26%");
@@ -24,16 +28,30 @@ const LoginPage = () => {
     const inputEmail = e.target.email.value;
     const inputPassword = e.target.password.value;
 
-    axios
-      .post("http://221.164.64.185:8080/api/v1/login", {
+    api
+      .post("/api/v1/login", {
         email: inputEmail,
         password: inputPassword,
       })
       .then((resp) => {
         console.log(resp.data);
-        if (resp.data.success) openSuccessModal();
-        // status error code 별로 수정할 것
-        else openFailModal();
+        if (resp.data.success) {
+          console.log("success");
+          console.log(resp.data.response);
+          const { accessToken, refreshToken } = resp.data.response;
+
+          // if (accessToken && refreshToken) {
+          auth.setTokens(accessToken, refreshToken);
+
+          console.log(accessToken);
+          console.log(refreshToken);
+
+          openSuccessModal();
+          // } else openFailModal();
+        } else if (resp.data.apiError && resp.data.apiError.status === 1001) openFailModal();
+      })
+      .catch((error) => {
+        console.log(error);
       });
 
     // return;
