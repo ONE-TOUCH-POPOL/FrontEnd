@@ -5,11 +5,16 @@ import loginPostAPI from "../../api/loginPost";
 import { Form } from "./Login.layout";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
+import useLoginStore from "../../store/login";
 
 const Login = () => {
   const modal = useStore();
   const auth = useAuthStore();
+  const loginState = useLoginStore((state) => state.login);
 
+  const changeLoginState = () => {
+    loginState();
+  };
   const openSuccessModal = () => {
     modal.set_modal();
     modal.set_modal_size("26%", "26%");
@@ -36,6 +41,7 @@ const Login = () => {
       // if (reissueSuccess) {
       //   console.log(res);
       // }
+      changeLoginState();
       openSuccessModal();
     } else if (loginData.data.apiError && loginData.data.apiError.status === 1001) openFailModal();
   };
