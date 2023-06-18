@@ -6,7 +6,7 @@ const OpenSidebar = ({ handleOpenSidebar }) => {
     <div>
       <OpenSidebarLayout>
         <button onClick={handleOpenSidebar} style={{ background: "white", paddingLeft: "80%" }}>
-          <img src="/img/double_arrow_left.png" style={{ background: "white", width: "20px" }} />
+          <img src="/img/double_arrow_left.png" style={{ background: "white", width: "20px", cursor: "pointer" }} alt="closeArrow" />
         </button>
         <OpenSidebarCategoryLayout>
           <ul>
