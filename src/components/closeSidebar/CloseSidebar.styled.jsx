@@ -12,7 +12,6 @@ const CloseSidebarLayout = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 `;
 
 export { CloseSidebarLayout };
