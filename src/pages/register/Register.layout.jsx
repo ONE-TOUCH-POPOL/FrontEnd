@@ -8,14 +8,14 @@ const Form = styled.form`
   border-radius: 5px;
 `;
 
-const DupEmailMessage = styled.p`
+const WarnMessage = styled.p`
   color: #ff4d7c;
   font-size: 11px;
   margin-top: 3px;
   margin-left: 5px;
   text-align: left;
 `;
-const NoDupEmailMessage = styled.p`
+const GoodMessage = styled.p`
   color: #63c92c;
   font-size: 11px;
   margin-top: 3px;
@@ -23,4 +23,4 @@ const NoDupEmailMessage = styled.p`
   text-align: left;
 `;
 
-export { Form, DupEmailMessage, NoDupEmailMessage };
+export { Form, WarnMessage, GoodMessage };
