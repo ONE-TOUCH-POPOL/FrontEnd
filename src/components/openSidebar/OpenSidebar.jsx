@@ -1,5 +1,5 @@
 import React from "react";
-import { OpenSidebarLayout, OpenSidebarCalendarLayout } from "./OpenSidebar.styled";
+import { OpenSidebarLayout, OpenSidebarCalendarLayout } from "./OpenSidebar.Layout";
 import CalendarComponent from "../../components/calendar";
 import TabMenuComponent from "../../components/tabMenu";
 const OpenSidebar = ({ handleOpenSidebar }) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { CloseSidebarLayout } from "./CloseSidebar.styled";
+import { CloseSidebarLayout } from "./CloseSidebar.Layout";
 
 const CloseSidebar = ({ handleCloseSidebar }) => {
   return (

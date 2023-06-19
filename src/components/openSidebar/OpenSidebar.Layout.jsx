@@ -15,8 +15,8 @@ const OpenSidebarLayout = styled.div`
 
 const OpenSidebarCalendarLayout = styled.div`
   display: flex;
-  width: 100%;
-  height: 0;
+  width: 200px;
+  height: 200px;
   padding-bottom: 120%;
   /* height: 30%; */
   margin-top: auto;
