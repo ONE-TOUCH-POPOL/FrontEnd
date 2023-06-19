@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState } from "react";
 
 import useStore from "../../store/modal";
@@ -11,9 +10,6 @@ import Button from "../../components/button/Button";
 const Register = () => {
   const modal = useStore();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
   const [isEmailDuplicate, setIsEmailDuplicate] = useState(0);
 
   const [isValidEmail, setIsValidEmail] = useState(true);
@@ -49,7 +45,7 @@ const Register = () => {
     else setIsValidEmail(true);
     if (!PASSWORD_REGEX.test(inputPassword)) setIsValidPassword(false);
     else setIsValidPassword(true);
-    if (inputPassword != confirmPassword) setIsPasswordConfirm(false);
+    if (inputPassword !== confirmPassword) setIsPasswordConfirm(false);
     else setIsPasswordConfirm(true);
 
     if (isValidEmail && isValidPassword && isPasswordConfirm) {
@@ -70,8 +66,8 @@ const Register = () => {
           onChange={(e) => setEmail(e.target.value)}
           onBlur={async () => await checkDupEmail(email)}
         />
-        {isEmailDuplicate == 2 && <WarnMessage>✖ 중복된 이메일이 존재합니다.</WarnMessage>}
-        {isEmailDuplicate == 1 && <GoodMessage> ✔ 사용 가능한 이메일입니다. </GoodMessage>}
+        {isEmailDuplicate === 2 && <WarnMessage>✖ 중복된 이메일이 존재합니다.</WarnMessage>}
+        {isEmailDuplicate === 1 && <GoodMessage> ✔ 사용 가능한 이메일입니다. </GoodMessage>}
         {!isValidEmail && <WarnMessage>✖ 유효하지 않는 이메일입니다. </WarnMessage>}
 
         <Input type="password" name="password" placeholder="비밀번호 입력 (6자 이상)" />
