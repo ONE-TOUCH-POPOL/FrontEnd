@@ -8,16 +8,9 @@ const OpenSidebarLayout = styled.div`
   /* float: left; */
 
   left: 0;
-  padding: 20px 0px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-`;
-
-const OpenSidebarCategoryLayout = styled.div`
-  flex: 1;
-  display: flex;
-  border-bottom: 1px solid #abc8ff;
 `;
 
 const OpenSidebarCalendarLayout = styled.div`
@@ -30,4 +23,4 @@ const OpenSidebarCalendarLayout = styled.div`
   /* margin-bottom: 12px; */
 `;
 
-export { OpenSidebarLayout, OpenSidebarCalendarLayout, OpenSidebarCategoryLayout };
+export { OpenSidebarLayout, OpenSidebarCalendarLayout };

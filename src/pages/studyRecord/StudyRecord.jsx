@@ -5,7 +5,6 @@ import CloseSidebar from "../../components/closeSidebar/CloseSidebar";
 import { StudyRecordLayout } from "./StudyRecord.Layout";
 
 const StudyRecord = () => {
-  // sidebar test
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const handleOpenSidebar = () => {
     setSidebarOpen(true);

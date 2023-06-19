@@ -1,33 +1,41 @@
 import styled from "styled-components";
+const TabTopStyle = styled.div`
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding-right: 10px;
+`;
 const TabMenuStyle = styled.ul`
+  display: flex;
   color: black;
   font-weight: bold;
-  display: flex;
-  /* list-style: none; */
-  padding: 0px 10% 0px 0px;
+  font-size: 15px;
+  padding-left: 10px;
   cursor: pointer;
+  width: 97%;
+  /* justify-content: space-evenly; */
+
   .submenu {
     display: flex;
-    /* width: calc(100% / 3); */
     padding: 8px;
-    font-size: 15px;
     border-radius: 7px;
+    flex-direction: column;
   }
 
   .focused {
     //선택된 Tabmenu 에만 적용되는 CSS를 구현
     background-color: #abc8ff;
-    width: 40%;
-    /* color: white; */
+    width: 45%;
   }
-  /* 
-  & div.desc {
-    text-align: center;
-  } */
+
+  .notfocused {
+    background-color: white;
+    width: 45%;
+  }
 `;
 
 const Desc = styled.div`
   /* text-align: center; */
 `;
 
-export { TabMenuStyle, Desc };
+export { TabTopStyle, TabMenuStyle, Desc };
