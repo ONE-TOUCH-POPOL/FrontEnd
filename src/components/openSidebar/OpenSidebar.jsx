@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { OpenSidebarLayout, OpenSidebarCalendarLayout } from "./OpenSidebar.Layout";
-import CalendarComponent from "../../components/calendar";
-import TabMenuComponent from "../../components/tabMenu";
+import { OpenSidebarLayout, OpenSidebarCalendarLayout, OpenSidebarListLayout } from "./OpenSidebar.Layout";
+import CalendarComponent from "../calendar";
+import TabMenuComponent from "../tabMenu";
+import CategoryComponent from "../category";
 
 const OpenSidebar = ({ handleOpenSidebar }) => {
   const [currentTab, setCurrentTab] = useState(0);
@@ -13,7 +14,12 @@ const OpenSidebar = ({ handleOpenSidebar }) => {
     <div>
       <OpenSidebarLayout>
         <TabMenuComponent handleOpenSidebar={handleOpenSidebar} currentTab={currentTab} clickTab={handleTabClick}></TabMenuComponent>
-        <OpenSidebarCalendarLayout>{currentTab === 1 && <CalendarComponent />}</OpenSidebarCalendarLayout>
+        <OpenSidebarListLayout>{currentTab === 0 && <CategoryComponent />}</OpenSidebarListLayout>
+        {currentTab === 1 && (
+          <OpenSidebarCalendarLayout>
+            <CalendarComponent />
+          </OpenSidebarCalendarLayout>
+        )}
       </OpenSidebarLayout>
     </div>
   );

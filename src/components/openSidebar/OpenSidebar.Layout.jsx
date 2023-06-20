@@ -12,15 +12,19 @@ const OpenSidebarLayout = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
+const OpenSidebarListLayout = styled.div`
+  flex: 1;
+  display: flex;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #abc8ff;
+`;
 const OpenSidebarCalendarLayout = styled.div`
   display: flex;
   width: 200px;
   height: 200px;
   padding-bottom: 111%;
-  /* height: 30%; */
   margin-top: auto;
   /* margin-bottom: 12px; */
 `;
 
-export { OpenSidebarLayout, OpenSidebarCalendarLayout };
+export { OpenSidebarLayout, OpenSidebarCalendarLayout, OpenSidebarListLayout };
