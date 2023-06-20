@@ -16,6 +16,7 @@ const TabMenuStyle = styled.ul`
   /* justify-content: space-evenly; */
 
   .submenu {
+    margin-left: 5px;
     display: flex;
     padding: 8px;
     border-radius: 7px;
