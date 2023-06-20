@@ -45,28 +45,32 @@ const CalendarComp = ({ time }) => {
   let Result = [];
   let week = firstWeek;
 
+  // 클릭한 날짜 저장
+  const [selectDay, setSelectDay] = useState(today);
+
   // 실제 달력을 컴포넌트를 만드는 함수
   for (week; week <= lastWeek; week++) {
+    // selectDay
     Result = Result.concat(
       <div className="calendar_body_line" key={week}>
         {Array(7)
           .fill(0)
           .map((data, index) => {
-            let days = today.clone().startOf("year").week(week).startOf("week").add(index, "day"); //d로해도되지만 직관성
+            let days = selectDay.clone().startOf("year").week(week).startOf("week").add(index, "day"); //d로해도되지만 직관성
             let colors = {
               bgcolor: false, // 해당하는 날 배경 색
               color: "black", // 날짜 숫자 글자 색
             };
-            // 조건에 다라 해당날짜 css를 변경
-            if (time.format("YYYYMMDD") === days.format("YYYYMMDD")) {
+
+            // 조건에 따라 해당날짜 css를 변경
+            if (selectDay.format("YYYYMMDD") === days.format("YYYYMMDD")) {
               colors.bgcolor = true;
-              // colors.color = "red";
             } else if (days.format("MM") !== today.format("MM")) {
               colors.color = "#b7b7b7";
             }
 
             return (
-              <Days_style colors={colors} key={index}>
+              <Days_style colors={colors} key={index} onClick={() => setSelectDay(days)}>
                 <Day_style colors={colors} key={index}>
                   {days.format("D")}
                 </Day_style>
