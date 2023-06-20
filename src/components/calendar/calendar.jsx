@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { CalendarStyle, StyledCalendar, Days_style, Day_style } from "./Calendar.styled";
 import moment from "moment";
+import useSelectDayStore from "../../store/selectDay";
 
 const Day_kor = () => {
   return (
@@ -46,7 +47,9 @@ const CalendarComp = ({ time }) => {
   let week = firstWeek;
 
   // 클릭한 날짜 저장
-  const [selectDay, setSelectDay] = useState(today);
+  // const [selectDay, setSelectDay] = useState(today);
+  const selectDay = useSelectDayStore((state) => state.selectDay);
+  const setSelectDay = useSelectDayStore((state) => state.setSelectDay);
 
   // 실제 달력을 컴포넌트를 만드는 함수
   for (week; week <= lastWeek; week++) {
