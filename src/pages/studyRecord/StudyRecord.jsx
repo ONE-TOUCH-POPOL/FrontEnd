@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import OpenSidebar from "../../components/openSidebar/OpenSidebar";
 import CloseSidebar from "../../components/closeSidebar/CloseSidebar";
-import { StudyRecordLayout, ContentLayout } from "./StudyRecord.Layout";
+import { StudyRecordLayout, ContentLayout, TextAreaButton } from "./StudyRecord.Layout";
 import TextArea from "../../components/textArea/TextArea";
-
+import TitleArea from "../../components/titleArea/TitleArea";
 const StudyRecord = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const handleOpenSidebar = () => {
@@ -23,27 +23,15 @@ const StudyRecord = () => {
         <OpenSidebar handleOpenSidebar={handleOpenSidebar}></OpenSidebar>
       )}
       <ContentLayout>
+        <TitleArea>
+          <TextAreaButton>
+            <img src="/img/double_arrow_left.png" style={{ background: "black", width: "20px", cursor: "pointer" }} alt="closeArrow" />
+          </TextAreaButton>
+        </TitleArea>
         <TextArea></TextArea>
       </ContentLayout>
     </StudyRecordLayout>
   );
-
-  // return (
-  //   <StudyRecordLayout>
-  //     {sidebarOpen ? (
-  //       <>
-  //         <CloseSidebar handleCloseSidebar={handleCloseSidebar}></CloseSidebar>
-  //       </>
-  //     ) : (
-  //       <>
-  //         <OpenSidebar handleOpenSidebar={handleOpenSidebar}></OpenSidebar>
-  //         <ContentLayout>
-  //           <TextArea></TextArea>
-  //         </ContentLayout>
-  //       </>
-  //     )}
-  //   </StudyRecordLayout>
-  // );
 };
 
 export default StudyRecord;
