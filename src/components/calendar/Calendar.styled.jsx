@@ -9,14 +9,12 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
       justify-content: center;
       align-items: center;
       width: 100%;
-      height: 100%;
+      height: auto;
       .calendar {
-        padding-top: 10px;
-        /* width: 56vh; */
-        width: 90%;
-        height: 90%;
+        margin: 4px;
+        width: 100%;
+        height: auto;
         aspect-ratio: 1/1;
-
         font-size: 1.5vh;
       }
       .calendar_head {
@@ -26,7 +24,7 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
 
         height: 10%; // 5
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         .calendar_button {
           cursor: pointer;
           /* margin: 1px; */
@@ -35,14 +33,14 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
         .calendar_head_text {
           display: flex;
           /* justify-content: center; */
-          font-size: 1vh;
+          font-size: 1.5vh;
         }
       }
 
       .calendar_body {
         display: flex;
         width: 100%;
-        height: 90%;
+        height: 100%;
 
         .calendar_body_box {
           display: flex;
@@ -55,11 +53,11 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
               display: flex;
               justify-content: center;
               width: 100%;
-              font-size: 1vh;
-              margin-bottom: 10px;
+              font-size: 1.3vh;
+              margin-bottom: 6px;
               .calendar_body_head_day {
                 border: 1.4px solid #abc8ff;
-                border-radius: 10px;
+                border-radius: 7px;
                 padding: 5px;
               }
             }
@@ -70,7 +68,7 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
             flex-direction: row;
             width: 100%;
             height: 100%;
-            margin-bottom: 22px;
+            margin-bottom: 6px;
           }
         }
       }
@@ -89,7 +87,7 @@ const Days_style = styled.div.attrs((props) => ({}))`
       margin: 2px;
       width: 100%;
       height: 100%;
-      font-size: 1vh;
+      font-size: 1.2vh;
 
       /* padding: 5px 10px; */
     `;
@@ -107,7 +105,7 @@ const Day_style = styled.span.attrs((props) => ({}))`
       color: ${textColor};
       border-radius: 50%;
       width: 100%;
-      padding: 4%;
+      padding: 19%;
     `;
   }};
 `;

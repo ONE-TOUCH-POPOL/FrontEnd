@@ -14,12 +14,12 @@ const OpenSidebar = ({ handleOpenSidebar }) => {
     <div>
       <OpenSidebarLayout>
         <TabMenuComponent handleOpenSidebar={handleOpenSidebar} currentTab={currentTab} clickTab={handleTabClick}></TabMenuComponent>
-        <OpenSidebarListLayout>{currentTab === 0 && <CategoryComponent />}</OpenSidebarListLayout>
         {currentTab === 1 && (
           <OpenSidebarCalendarLayout>
             <CalendarComponent />
           </OpenSidebarCalendarLayout>
         )}
+        <OpenSidebarListLayout>{currentTab === 0 && <CategoryComponent />}</OpenSidebarListLayout>
       </OpenSidebarLayout>
     </div>
   );
