@@ -7,7 +7,7 @@ import TextArea from "../../components/textArea/TextArea";
 import TitleArea from "../../components/titleArea/TitleArea";
 const StudyRecord = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [toggleState, setToggleState] = React.useState(false);
+  const [toggleState, setToggleState] = useState(false);
 
   const handleOpenSidebar = () => {
     setSidebarOpen(true);
