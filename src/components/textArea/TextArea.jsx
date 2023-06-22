@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
 import { TextAreaLayout } from "./TextArea.styled";
 
-const TextArea = () => {
+const TextArea = ({ toggleState }) => {
   const [text, setText] = useState("");
   // const [view, setView] = useState("live");
   const onChangeMD = (value, event) => {
@@ -18,7 +18,7 @@ const TextArea = () => {
         onChange={(value, event) => {
           onChangeMD(value, event);
         }}
-        preview="preview"
+        preview={toggleState ? "preview" : "live"}
         height="100%"
       />
     </TextAreaLayout>

@@ -2,11 +2,13 @@
 import React, { useState } from "react";
 import OpenSidebar from "../../components/openSidebar/OpenSidebar";
 import CloseSidebar from "../../components/closeSidebar/CloseSidebar";
-import { StudyRecordLayout, ContentLayout, TextAreaButton } from "./StudyRecord.Layout";
+import { StudyRecordLayout, ContentLayout, ToggleButton } from "./StudyRecord.Layout";
 import TextArea from "../../components/textArea/TextArea";
 import TitleArea from "../../components/titleArea/TitleArea";
 const StudyRecord = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [toggleState, setToggleState] = React.useState(false);
+
   const handleOpenSidebar = () => {
     setSidebarOpen(true);
   };
@@ -15,6 +17,9 @@ const StudyRecord = () => {
     setSidebarOpen(false);
   };
 
+  const hanldToggleButton = () => {
+    setToggleState((prev) => !prev);
+  };
   return (
     <StudyRecordLayout>
       {sidebarOpen ? (
@@ -23,12 +28,13 @@ const StudyRecord = () => {
         <OpenSidebar handleOpenSidebar={handleOpenSidebar}></OpenSidebar>
       )}
       <ContentLayout>
-        <TitleArea>
-          <TextAreaButton>
-            <img src="/img/double_arrow_left.png" style={{ background: "black", width: "20px", cursor: "pointer" }} alt="closeArrow" />
-          </TextAreaButton>
-        </TitleArea>
-        <TextArea></TextArea>
+        <TitleArea></TitleArea>
+        <TextArea toggleState={toggleState}></TextArea>
+        <ToggleButton onClick={hanldToggleButton}>
+          {/* {toggleState ? "ON" : "OFF"} */}
+          <div className={`toggle-container ${toggleState ? "toggle--checked" : null}`} />
+          <div className={`toggle-circle ${toggleState ? "toggle--checked" : null}`} />
+        </ToggleButton>
       </ContentLayout>
     </StudyRecordLayout>
   );
