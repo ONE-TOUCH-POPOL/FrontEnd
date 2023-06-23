@@ -5,6 +5,7 @@ import CloseSidebar from "../../components/closeSidebar/CloseSidebar";
 import { StudyRecordLayout, ContentLayout, ToggleButton } from "./StudyRecord.Layout";
 import TextArea from "../../components/textArea/TextArea";
 import TitleArea from "../../components/titleArea/TitleArea";
+import SubTitleArea from "../../components/subTitleArea";
 const StudyRecord = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [toggleState, setToggleState] = useState(false);
@@ -29,6 +30,7 @@ const StudyRecord = () => {
       )}
       <ContentLayout>
         <TitleArea></TitleArea>
+        <SubTitleArea></SubTitleArea>
         <TextArea toggleState={toggleState}></TextArea>
         <ToggleButton onClick={hanldToggleButton}>
           {/* {toggleState ? "ON" : "OFF"} */}
