@@ -10,7 +10,7 @@ const TitleArea = () => {
     { fontWeight: "bold", color: "black", fontSize: "13px", width: "17%", text: "정리글 생성" },
     { fontWeight: "bold", color: "black", fontSize: "13px", width: "17%", text: "카테고리" },
     { fontWeight: "bold", color: "black", fontSize: "13px", width: "17%", text: "코드 포맷팅" },
-    { fontWeight: "bold", color: "black", fontSize: "13px", width: "17%", backgroundColor: "#FFCCEF", text: "질문 생성" },
+    { fontWeight: "bold", color: "black", fontSize: "13px", width: "17%", backgroundcolor: "#FFCCEF", text: "질문 생성" },
   ];
   return (
     <>
@@ -25,7 +25,7 @@ const TitleArea = () => {
                 color={data.color}
                 fontSize={data.fontSize}
                 width={data.width}
-                backgroundColor={data.backgroundColor}
+                backgroundcolor={data.backgroundcolor}
               >
                 {data.text}
               </Button>

@@ -1,14 +1,28 @@
-/* eslint-disable */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import OpenSidebar from "../../components/openSidebar/OpenSidebar";
 import CloseSidebar from "../../components/closeSidebar/CloseSidebar";
 import { StudyRecordLayout, ContentLayout, ToggleButton } from "./StudyRecord.Layout";
 import TextArea from "../../components/textArea/TextArea";
 import TitleArea from "../../components/titleArea/TitleArea";
 import SubTitleArea from "../../components/subTitleArea";
+import studyRecordAllGet from "../../api/studyRecordGet";
+import useLoginStore from "../../store/login";
+
 const StudyRecord = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [toggleState, setToggleState] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const isLogin = useLoginStore((state) => state.isLogin);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await studyRecordAllGet();
+      setCategories(data);
+    };
+    if (isLogin) {
+      fetchData();
+    }
+  }, [isLogin]);
 
   const handleOpenSidebar = () => {
     setSidebarOpen(true);
@@ -26,7 +40,7 @@ const StudyRecord = () => {
       {sidebarOpen ? (
         <CloseSidebar handleCloseSidebar={handleCloseSidebar}></CloseSidebar>
       ) : (
-        <OpenSidebar handleOpenSidebar={handleOpenSidebar}></OpenSidebar>
+        <OpenSidebar handleOpenSidebar={handleOpenSidebar} categories={categories}></OpenSidebar>
       )}
       <ContentLayout>
         <TitleArea></TitleArea>

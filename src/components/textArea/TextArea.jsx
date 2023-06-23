@@ -25,16 +25,16 @@ const TextArea = ({ toggleState }) => {
       />
 
       <MdEditorBottomLayout>
-        <Button backgroundColor="white" color="black" width="20%">
+        <Button backgroundcolor="white" color="black" width="20%">
           나가기
         </Button>
-        <Button hoverBackgroundColor="#518DFF" width="20%">
+        <Button hoverbackgroundcolor="#518DFF" width="20%">
           임시저장
         </Button>
-        <Button hoverBackgroundColor="#518DFF" width="20%">
+        <Button hoverbackgroundcolor="#518DFF" width="20%">
           저장
         </Button>
-        <Button backgroundColor="#FFCCEF" width="20%">
+        <Button backgroundcolor="#FFCCEF" width="20%">
           삭제
         </Button>
       </MdEditorBottomLayout>
