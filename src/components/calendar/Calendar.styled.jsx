@@ -33,7 +33,7 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
         .calendar_head_text {
           display: flex;
           /* justify-content: center; */
-          font-size: 1.5vh;
+          font-size: 1.6vh;
         }
       }
 
@@ -53,7 +53,7 @@ const CalendarStyle = styled.div.attrs((props) => ({}))`
               display: flex;
               justify-content: center;
               width: 100%;
-              font-size: 1.3vh;
+              font-size: 1.7vh;
               margin-bottom: 6px;
               .calendar_body_head_day {
                 border: 1.4px solid #abc8ff;
@@ -87,7 +87,7 @@ const Days_style = styled.div.attrs((props) => ({}))`
       margin: 2px;
       width: 100%;
       height: 100%;
-      font-size: 1.2vh;
+      font-size: 1.5vh;
 
       /* padding: 5px 10px; */
     `;

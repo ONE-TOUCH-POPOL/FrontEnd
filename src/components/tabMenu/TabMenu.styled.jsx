@@ -9,7 +9,7 @@ const TabMenuStyle = styled.ul`
   display: flex;
   color: black;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 18px;
   padding-left: 10px;
   cursor: pointer;
   width: 97%;

@@ -27,6 +27,7 @@ const NavLinks = styled.div`
     margin-top: 8px;
     color: #fff;
     margin-left: 1em;
+    margin-right: 10px;
     text-decoration: none;
 
     &:hover {
