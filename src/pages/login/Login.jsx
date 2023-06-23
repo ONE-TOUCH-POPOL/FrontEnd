@@ -32,15 +32,12 @@ const Login = () => {
 
     const loginData = await loginPostAPI.loginPost(e);
     if (loginData.data.success) {
-      console.log(loginData.data);
+      console.log(loginData.data.response);
 
-      const accessToken = loginData.headers.get("authorization").split(" ")[1];
-      auth.setTokens(accessToken);
+      const accessToken = loginData.data.response.accessToken.split(" ")[1];
+      const refreshToken = loginData.data.response.refreshToken;
+      auth.setTokens(accessToken, refreshToken);
 
-      // const reissueSuccess = await loginPostAPI.reissuePost(accessToken);
-      // if (reissueSuccess) {
-      //   console.log(res);
-      // }
       changeLoginState();
       openSuccessModal();
     } else if (loginData.data.apiError && loginData.data.apiError.status === 1001) openFailModal();

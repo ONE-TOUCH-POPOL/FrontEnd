@@ -17,9 +17,6 @@ const loginPost = async (e) => {
 };
 
 const reissuePost = async (accessToken) => {
-  // const accessToken = resp.headers.get("authorization").split(" ")[1];
-  // console.log(accessToken);
-  // auth.setTokens(accessToken);
   const resp = await api.post(
     "/reissue",
     {},
