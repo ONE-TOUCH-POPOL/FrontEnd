@@ -1,6 +1,5 @@
 import React from "react";
 import useStore from "../../store/modal";
-import useAuthStore from "../../store/useAuth";
 import loginPostAPI from "../../api/loginPost";
 import { Form } from "./Login.layout";
 import Input from "../../components/input/Input";
@@ -9,7 +8,6 @@ import useLoginStore from "../../store/login";
 
 const Login = () => {
   const modal = useStore();
-  const auth = useAuthStore();
   const loginState = useLoginStore((state) => state.login);
 
   const changeLoginState = () => {
@@ -34,9 +32,10 @@ const Login = () => {
     if (loginData.data.success) {
       console.log(loginData.data.response);
 
-      const accessToken = loginData.data.response.accessToken.split(" ")[1];
+      const accessToken = loginData.data.response.accessToken;
       const refreshToken = loginData.data.response.refreshToken;
-      auth.setTokens(accessToken, refreshToken);
+      localStorage.setItem("refresh-token", refreshToken);
+      localStorage.setItem("access-token", accessToken);
 
       changeLoginState();
       openSuccessModal();

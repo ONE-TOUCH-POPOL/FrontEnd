@@ -16,19 +16,25 @@ const loginPost = async (e) => {
   return resp;
 };
 
-const reissuePost = async (accessToken) => {
-  const resp = await api.post(
-    "/reissue",
-    {},
-    {
-      withCredentials: true,
-      headers: {
-        Authorization: "Bearer " + accessToken,
-        "Content-Type": "application/json",
-      },
-    }
-  );
-  return resp.data.success;
+const reissuePost = async () => {
+  const refreshToken = localStorage.getItem("refresh-token");
+  const accessToken = localStorage.getItem("access-token");
+  try {
+    const resp = await api.post(
+      "/reissue",
+      { "refresh-token": refreshToken },
+      {
+        headers: {
+          Authorization: accessToken,
+          // "Content-Type": "application/json",
+        },
+      }
+    );
+    return resp;
+  } catch (error) {
+    console.error("An error occurred:", error);
+    return null;
+  }
 };
 const loginPostAPI = { loginPost, reissuePost };
 export default loginPostAPI;
