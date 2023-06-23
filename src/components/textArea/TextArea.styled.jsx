@@ -3,6 +3,7 @@ import styled from "styled-components";
 const TextAreaLayout = styled.div`
   width: 100%;
   height: 90%;
+  position: relative;
 
   .w-md-editor {
     border-radius: 0px;
@@ -23,33 +24,9 @@ const TextAreaLayout = styled.div`
     justify-content: flex-start;
   }
 
-  /* .w-md-editor-toolbar button[data-name="live"] {
-    height: 20px;
-    width: 20px;
-    padding-top: 0px;
-    background-image: url(/img/double_arrow_right.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: white;
-  }
-  .w-md-editor-toolbar button[data-name="live"] svg {
+  .w-md-editor-bar {
     display: none;
   }
-
-  .w-md-editor-toolbar button[data-name="preview"] {
-    background-image: url(/img/double_arrow_left.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: white;
-    height: 20px;
-    width: 20px;
-    padding-top: 0px;
-  }
-  .w-md-editor-toolbar button[data-name="preview"] svg {
-    display: none;
-  } */
 
   // delete
   .w-md-editor-toolbar button[data-name="live"] {
@@ -68,5 +45,15 @@ const TextAreaLayout = styled.div`
     display: none;
   }
 `;
-
-export { TextAreaLayout };
+const MdEditorBottomLayout = styled.div`
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 50%;
+  height: 70px;
+  gap: 3%;
+  background-color: #abc8ff;
+`;
+export { TextAreaLayout, MdEditorBottomLayout };
