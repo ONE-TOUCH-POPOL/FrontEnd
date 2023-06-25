@@ -3,11 +3,10 @@ import MDEditor from "@uiw/react-md-editor";
 import { TextAreaLayout, MdEditorBottomLayout } from "./TextArea.styled";
 import Button from "../button/Button";
 
-const TextArea = ({ toggleState }) => {
-  const [text, setText] = useState("");
-  // const [view, setView] = useState("live");
+const TextArea = ({ toggleState, record }) => {
+  const [text, setText] = useState(record?.content || "test");
   const onChangeMD = (value, event) => {
-    console.log(value, event);
+    // console.log(value, event);
     setText(value);
   };
 

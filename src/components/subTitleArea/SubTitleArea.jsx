@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SubTitleAreaLayout, LeftSubTitleAreaLayout, RightSubTitleAreaLayout, ContentStyle, DateStyle } from "./SubTitleArea.styled";
 import useSelectDayStore from "../../store/selectDay";
-import useSelectRecordStore from "../../store/selectRecord";
 
-const SubTitleArea = () => {
+const SubTitleArea = ({ record }) => {
   const selectDay = useSelectDayStore((state) => state.selectDay);
-  const selectRecord = useSelectRecordStore((state) => state.selectRecord);
-  const [record, setRecord] = useState(selectRecord);
-
-  useEffect(() => {
-    updateRecord(selectRecord);
-
-    console.log("change select record");
-    console.log(selectRecord);
-    console.log("record?.mainCodeName" + record?.mainCodeName);
-  }, [selectRecord]);
-
-  const updateRecord = (r) => {
-    setRecord(r);
-  };
   return (
     <>
       <SubTitleAreaLayout>

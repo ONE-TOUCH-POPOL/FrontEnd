@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import OpenSidebar from "../../components/openSidebar/OpenSidebar";
 import CloseSidebar from "../../components/closeSidebar/CloseSidebar";
 import { StudyRecordLayout, ContentLayout, ToggleButton } from "./StudyRecord.Layout";
-import TextArea from "../../components/textArea/TextArea";
-import TitleArea from "../../components/titleArea/TitleArea";
+import TextArea from "../../components/textArea";
+import TitleArea from "../../components/titleArea";
 import SubTitleArea from "../../components/subTitleArea";
 import studyRecordAllGet from "../../api/studyRecordGet";
 import useLoginStore from "../../store/login";
@@ -19,7 +19,7 @@ const StudyRecord = () => {
     const fetchData = async () => {
       const data = await studyRecordAllGet();
       setRecords(data);
-      console.log(setRecords);
+      // console.log(setRecords);
     };
     if (isLogin) {
       fetchData();

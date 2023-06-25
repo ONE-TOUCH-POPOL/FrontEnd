@@ -20,8 +20,8 @@ const RecordPerDay = ({ filteredRecords, selectDay }) => {
                         mainCategory: record.mainCodeName,
                         subCategory: subCategory.codeName,
                       });
-                      console.log("RecordPerDay.jsx의 zustand setSelectRecord");
-                      console.log(studyRecord);
+                      // console.log("RecordPerDay.jsx의 zustand setSelectRecord");
+                      // console.log(studyRecord);
                     }}
                   >
                     {studyRecord.title}
