@@ -15,7 +15,6 @@ const StudyRecord = () => {
   const [toggleState, setToggleState] = useState(false);
   const [records, setRecords] = useState([]);
   const selectDay = useSelectDayStore((state) => state.selectDay);
-
   useEffect(() => {
     const fetchData = async () => {
       const data = await studyRecordAllGet();
