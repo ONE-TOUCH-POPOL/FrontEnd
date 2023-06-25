@@ -7,22 +7,26 @@ import TitleArea from "../../components/titleArea/TitleArea";
 import SubTitleArea from "../../components/subTitleArea";
 import studyRecordAllGet from "../../api/studyRecordGet";
 import useLoginStore from "../../store/login";
+import useSelectDayStore from "../../store/selectDay";
 
 const StudyRecord = () => {
+  const isLogin = useLoginStore((state) => state.isLogin);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [toggleState, setToggleState] = useState(false);
-  const [categories, setCategories] = useState([]);
-  const isLogin = useLoginStore((state) => state.isLogin);
+  const [records, setRecords] = useState([]);
+  const selectDay = useSelectDayStore((state) => state.selectDay);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await studyRecordAllGet();
-      setCategories(data);
+      setRecords(data);
+      console.log(setRecords);
     };
     if (isLogin) {
       fetchData();
     }
   }, [isLogin]);
+  // console.log(records);
 
   const handleOpenSidebar = () => {
     setSidebarOpen(true);
@@ -40,7 +44,7 @@ const StudyRecord = () => {
       {sidebarOpen ? (
         <CloseSidebar handleCloseSidebar={handleCloseSidebar}></CloseSidebar>
       ) : (
-        <OpenSidebar handleOpenSidebar={handleOpenSidebar} categories={categories}></OpenSidebar>
+        <OpenSidebar handleOpenSidebar={handleOpenSidebar} records={records} selectDay={selectDay}></OpenSidebar>
       )}
       <ContentLayout>
         <TitleArea></TitleArea>
