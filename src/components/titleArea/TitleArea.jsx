@@ -16,9 +16,10 @@ const TitleArea = ({ record }) => {
       <TitleAreaLayout>
         <TitleStyle>{record?.title || "제목되나??"}</TitleStyle>
         <ButtonList>
-          {propsButtonArr.map((data) => {
+          {propsButtonArr.map((data, index) => {
             return (
               <Button
+                key={index}
                 fontWeight={data.fontWeight}
                 color={data.color}
                 fontSize={data.fontSize}
