@@ -5,10 +5,12 @@ import { Form } from "./Login.layout";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 import useLoginStore from "../../store/login";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const modal = useStore();
   const loginState = useLoginStore((state) => state.login);
+  const navigate = useNavigate();
 
   const changeLoginState = () => {
     loginState();
@@ -39,6 +41,8 @@ const Login = () => {
 
       changeLoginState();
       openSuccessModal();
+
+      navigate("/");
     } else if (loginData.data.apiError && loginData.data.apiError.status === 1001) openFailModal();
   };
 
