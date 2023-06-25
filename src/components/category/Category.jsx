@@ -1,7 +1,14 @@
 import React from "react";
 import Dropdown from "../dropdown";
+import useSelectRecordStore from "../../store/selectRecord";
 
 const Category = ({ records }) => {
+  const setSelectRecord = useSelectRecordStore((state) => state.setSelectRecord);
+
+  const handleDropdownClick = (record) => {
+    setSelectRecord(record);
+  };
+
   return (
     <div style={{ marginLeft: "15px" }}>
       {records &&
@@ -11,7 +18,7 @@ const Category = ({ records }) => {
               mainCategory.subCategories.map((subCategory) => (
                 <Dropdown key={subCategory.id} name={subCategory.codeName} type="sub">
                   {subCategory.studyRecordDetailList.map((record) => (
-                    <Dropdown key={record.id} name={record.title}></Dropdown>
+                    <Dropdown key={record.id} name={record.title} type="record" onClick={() => handleDropdownClick(record)}></Dropdown>
                   ))}
                 </Dropdown>
               ))}
