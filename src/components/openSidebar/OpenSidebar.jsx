@@ -3,7 +3,7 @@ import { OpenSidebarLayout, OpenSidebarCalendarLayout, OpenSidebarListLayout } f
 import Calendar from "../calendar";
 import TabMenu from "../tabMenu";
 import Category from "../category";
-import RecordPerDayComponent from "../recordPerDay/index.jsx";
+import RecordPerDay from "../recordPerDay";
 
 const OpenSidebar = ({ handleOpenSidebar, records, selectDay }) => {
   const [currentTab, setCurrentTab] = useState(0);
@@ -18,7 +18,7 @@ const OpenSidebar = ({ handleOpenSidebar, records, selectDay }) => {
         {currentTab === 1 && (
           <OpenSidebarCalendarLayout>
             <Calendar />
-            <RecordPerDayComponent records={records} selectDay={selectDay} />
+            <RecordPerDay records={records} selectDay={selectDay} />
           </OpenSidebarCalendarLayout>
         )}
         <OpenSidebarListLayout>{currentTab === 0 && <Category records={records} />}</OpenSidebarListLayout>

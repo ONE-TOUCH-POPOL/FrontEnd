@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import MDEditor from "@uiw/react-md-editor";
 import { TextAreaLayout, MdEditorBottomLayout } from "./TextArea.styled";
 import Button from "../button/Button";
 
-const TextArea = ({ toggleState, record }) => {
-  const [text, setText] = useState(record?.content || "test");
-  const onChangeMD = (value, event) => {
-    // console.log(value, event);
-    setText(value);
-  };
-
+const TextArea = ({ toggleState, text, onChangeMD }) => {
   return (
     <TextAreaLayout>
       <MDEditor

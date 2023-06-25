@@ -4,17 +4,17 @@ import TextArea from "./TextArea";
 
 const TextAreaComponent = ({ toggleState }) => {
   const selectRecord = useSelectRecordStore((state) => state.selectRecord);
-  const [record, setRecord] = useState(selectRecord);
+  const [text, setText] = useState(selectRecord?.content || "test");
 
   useEffect(() => {
-    updateRecord(selectRecord);
+    setText(selectRecord?.content || "test");
   }, [selectRecord]);
 
-  const updateRecord = (r) => {
-    setRecord(r);
+  const onChangeMD = (value, event) => {
+    setText(value);
   };
 
-  return <TextArea toggleState={toggleState} record={record}></TextArea>;
+  return <TextArea toggleState={toggleState} text={text} onChangeMD={onChangeMD}></TextArea>;
 };
 
 export default TextAreaComponent;
