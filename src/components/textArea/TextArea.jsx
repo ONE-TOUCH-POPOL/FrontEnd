@@ -2,14 +2,8 @@ import React from "react";
 import MDEditor from "@uiw/react-md-editor";
 import { TextAreaLayout, MdEditorBottomLayout } from "./TextArea.styled";
 import Button from "../button/Button";
-import { useNavigate } from "react-router-dom";
 
-const TextArea = ({ toggleState, text, onChangeMD }) => {
-  const navigate = useNavigate();
-  const handleExit = () => {
-    navigate("/");
-  };
-
+const TextArea = ({ toggleState, text, onChangeMD, ...props }) => {
   return (
     <TextAreaLayout>
       <MDEditor
@@ -24,10 +18,10 @@ const TextArea = ({ toggleState, text, onChangeMD }) => {
       />
 
       <MdEditorBottomLayout>
-        <Button backgroundcolor="white" color="black" width="20%" onClick={handleExit}>
+        <Button backgroundcolor="white" color="black" width="20%" onClick={props.handleExit}>
           나가기
         </Button>
-        <Button hoverbackgroundcolor="#518DFF" width="20%">
+        <Button hoverbackgroundcolor="#518DFF" width="20%" onClick={props.handleTempStore}>
           임시저장
         </Button>
         <Button hoverbackgroundcolor="#518DFF" width="20%">
