@@ -13,8 +13,8 @@ const ModalStyle = styled.div.attrs((props) => ({}))`
             height: 23%;
         }
         100% {
-            width: 50%;
-            height: 30%;
+            width: ${(props) => props.width};
+            height: ${(props) => props.height};
         }
         `;
 
@@ -29,7 +29,7 @@ const ModalStyle = styled.div.attrs((props) => ({}))`
       z-index: 5;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      /* height: 100vh; */
       visibility: visible;
       background-color: #ffffff;
       background-color: rgba(0, 0, 0, 0.1);
@@ -61,6 +61,10 @@ const ModalStyle = styled.div.attrs((props) => ({}))`
           width: 50%;
           height: 40px;
         }
+
+        // height, width  적용 크기
+        height: ${(props) => props.height};
+        width: ${(props) => props.width};
       }
     `;
   }};

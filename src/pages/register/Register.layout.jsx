@@ -8,4 +8,19 @@ const Form = styled.form`
   border-radius: 5px;
 `;
 
-export { Form };
+const WarnMessage = styled.p`
+  color: #ff4d7c;
+  font-size: 11px;
+  margin-top: 3px;
+  margin-left: 5px;
+  text-align: left;
+`;
+const GoodMessage = styled.p`
+  color: #63c92c;
+  font-size: 11px;
+  margin-top: 3px;
+  margin-left: 5px;
+  text-align: left;
+`;
+
+export { Form, WarnMessage, GoodMessage };

@@ -6,7 +6,7 @@ const Modal = ({ showModal, modalRef, modal_close, modal, ...props }) => {
   return (
     <>
       {showModal ? (
-        <ModalStyle onClick={modal_close} ref={modalRef} {...props}>
+        <ModalStyle height={modal.modal_height} width={modal.modal_width} onClick={modal_close} ref={modalRef} {...props}>
           <div className="modal_div">
             <div className="modal_title">{modal.modal_text}</div>
             <div className="modal_button">
